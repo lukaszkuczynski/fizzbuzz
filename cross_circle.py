@@ -19,7 +19,12 @@ class CrossCircle:
                 return 'circle'
 
     def column(self, scores):
-        return None
+        columns = [
+            [scores[0][0], scores[1][0], scores[2][0]],
+            [scores[0][1], scores[1][1], scores[2][1]],
+            [scores[0][2], scores[1][2], scores[2][2]]
+        ]
+        return self.row(columns)
 
 
 if __name__ == '__main__':
