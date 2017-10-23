@@ -15,6 +15,9 @@ class FizzBuzzTest(TestCase):
         actual = self.sut.run_for(5)
         self.assertEquals(actual, 'buzz')
 
+    def test_for_15_returns_fizzbuzz(self):
+        actual = self.sut.run_for(15)
+        self.assertEquals(actual, 'fizzbuzz')
 
 if __name__ == '__main__':
     main()
