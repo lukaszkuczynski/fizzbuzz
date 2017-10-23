@@ -23,5 +23,14 @@ class FizzBuzzTest(TestCase):
         actual = self.sut.run_for(4)
         self.assertEquals(actual, 4)
 
+    def test_for_other_input_raise_exception(self):
+        try:
+            self.sut.run_for("zzz")
+            self.fail("should throw an exception")
+        except Exception as e:
+            print(e)
+            pass
+
+
 if __name__ == '__main__':
     main()
