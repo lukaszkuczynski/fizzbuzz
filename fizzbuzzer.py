@@ -7,3 +7,5 @@ class FizzBuzzer:
             return 'fizz'
         elif number % 5 == 0:
             return 'buzz'
+        else:
+            return number
