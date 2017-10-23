@@ -12,7 +12,11 @@ class CrossCircle:
         return None
 
     def row(self, scores):
-        return None
+        for row in scores:
+            if sum(row) == 3:
+                return 'cross'
+            elif sum(row) == 0:
+                return 'circle'
 
     def column(self, scores):
         return None
