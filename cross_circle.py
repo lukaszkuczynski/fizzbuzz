@@ -5,6 +5,7 @@
 """
 
 class CrossCircle:
+
     def who_won(self, scores):
         return \
             self.diagonal(scores) \
@@ -25,16 +26,18 @@ class CrossCircle:
                 return 'circle'
 
     def column(self, scores):
-        columns = [
-            [scores[0][0], scores[1][0], scores[2][0]],
-            [scores[0][1], scores[1][1], scores[2][1]],
-            [scores[0][2], scores[1][2], scores[2][2]]
-        ]
-        return self.row(columns)
+        transposed = [list(x) for x in zip(*scores)]
+        # # todo rethink numpy or zip to transpose matrix
+        # columns = [
+        #     [scores[0][0], scores[1][0], scores[2][0]],
+        #     [scores[0][1], scores[1][1], scores[2][1]],
+        #     [scores[0][2], scores[1][2], scores[2][2]]
+        # ]
+        return self.row(transposed)
 
 
 if __name__ == '__main__':
     cc = CrossCircle()
     # won = cc.who_won([[0,0,1],[0,1,1],[1,0,1]])
-    won = cc.who_won([[0, 0, 1], [0, 0, 1], [1, 1, 0]])
+    won = cc.who_won([[0, 1, 1], [0, 0, 1], [0, 0, 1]])
     print(won)
