@@ -1,6 +1,7 @@
 class FizzBuzzer:
 
-    def run_for(self, number):
+    @staticmethod
+    def run_for(number):
         if number % 15 == 0:
             return 'fizzbuzz'
         elif number % 3 == 0:
